@@ -3,13 +3,12 @@
 source $OPENSHIFT_CARTRIDGE_SDK_BASH
 
 set -e
-set -x
 
 function run_script() {
   local script="$OPENSHIFT_REPO_DIR/bin/$1"
   shift
 
-  if [ -f "$script" -a -x "$path" ]
+  if [ -f "$script" -a -x "$script" ]
   then
     "$script" "$@"
   else
