@@ -1,0 +1,60 @@
+#!/bin/bash
+
+source $OPENSHIFT_CARTRIDGE_SDK_BASH
+
+set -e
+set -x
+
+function run_script() {
+  local script="$OPENSHIFT_REPO_DIR/bin/$1"
+  shift
+
+  if [ -f "$script" -a -x "$path" ]
+  then
+    "$script" "$@"
+  else
+    return 0
+  fi
+}
+
+function start() {
+  client_message "Starting DIY Runner"
+  run_script "run-web.sh" -i $OPENSHIFT_DIY_RUNNER_IP -p $OPENSHIFT_DIY_RUNNER_PORT
+}
+
+function stop() {
+  client_message "Stopping DIY Runner"
+  run_script "stop-web.sh"
+}
+
+function restart() {
+  stop
+  start
+}
+
+function status() {
+  if output=$(curl http://$OPENSHIFT_DIY_RUNNER_IP:$OPENSHIFT_DIY_RUNNER_PORT 2>&1)
+  then
+    client_result "Application is running"
+  else
+    client_result "Application is either stopped or inaccessible"
+  fi
+}
+
+function noop() {
+  return 0
+}
+
+case "$1" in
+  start)       start ;;
+  stop)        stop ;;
+  restart)     restart ;;
+  status)      status ;;
+  reload)      noop ;;
+  tidy)        noop ;;
+  prebuild)    noop ;;
+  build)       noop ;;
+  deploy)      noop ;;
+  post-deploy) noop ;;
+  *)           exit 0
+esac
