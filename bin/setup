@@ -4,4 +4,4 @@ source $OPENSHIFT_CARTRIDGE_SDK_BASH
 
 set -e
 
-mkdir -p $OPENSHIFT_DIY_RUNNER_DIR/{logs,run}
+#mkdir -p $OPENSHIFT_DIY_RUNNER_DIR/{logs,run}
