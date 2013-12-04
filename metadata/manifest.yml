@@ -2,10 +2,10 @@ Name: diy-runner
 Cartridge-Short-Name: DIY_Runner
 Display-Name: DIY Runner
 Description: "A cartridge for slightly less DIY applications"
-Version: "0.1"
+Version: "0.1.1"
 License: "ASL 2.0"
 License-Url: http://www.apache.org/licenses/LICENSE-2.0.txt
-Cartridge-Version: "0.1"
+Cartridge-Version: "0.1.1"
 Cartridge-Vendor: 42six
 Categories:
   - web_framework
@@ -49,6 +49,7 @@ Cart-Data:
 Provides:
   - diy-runner
   - diy-runner-0.1
+  - diy-runner-0.1.1
 Publishes:
   publish-gear-endpoint:
     Type: "NET_DIY_RUNNER:gear-endpoint-info"
