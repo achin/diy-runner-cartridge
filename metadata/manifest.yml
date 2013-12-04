@@ -69,3 +69,12 @@ Endpoints:
       - ws
     Options:
       primary: true
+    Mappings:
+      - Frontend: ''
+        Backend: ''
+        Options:
+          websocket: true
+      - Frontend: /health
+        Backend: ''
+        Options:
+          health: true
