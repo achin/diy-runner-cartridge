@@ -52,17 +52,12 @@ Provides:
   - diy-runner-0.1
   - diy-runner-0.1.1
 Publishes:
-  publish-gear-endpoint:
-    Type: "NET_DIY_RUNNER:gear-endpoint-info"
 Subscribes:
   set-env:
     Type: ENV:*
     Required: false
   set-doc-url:
     Type: STRING:urlpath
-    Required: false
-  set-db-connection-info:
-    Type: "ENV:NET_DIY_RUNNER:db:connection-info"
     Required: false
 Scaling:
   Min: 1
