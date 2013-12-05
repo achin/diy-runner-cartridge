@@ -8,8 +8,9 @@ License-Url: http://www.apache.org/licenses/LICENSE-2.0.txt
 Cartridge-Version: "0.1.1"
 Cartridge-Vendor: 42six
 Categories:
-  - web_framework
   - service
+  - diy
+  - web_framework
 Website: https://github.com/achin/diy-runner-cartridge
 Help-Topics:
   "Developer Center": https://openshift.redhat.com/community/developers
